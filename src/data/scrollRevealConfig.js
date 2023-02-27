@@ -32,7 +32,7 @@ export const targetElements = [
   {
     element: ".about-wrapper__image",
     animation: {
-      delay: 600,
+      delay: 1000,
       origin: "bottom",
     },
   },
