@@ -1,3 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #projects {
   background-color: $white-color;
   color: $dark-blue-text;
@@ -11,72 +21,147 @@
 
   .project-wrapper {
 
-    li {
-      font-size: 1.5rem;
-    }
-    margin-bottom: 15rem;
-
-    @include respond(phone) {
-      margin-bottom: 0rem;
-    }
-
-    .row {
-      margin-bottom: 8rem;
-
-      @include respond(phone) {
-        margin-bottom: 4rem;
-      }
-    }
-
-    &__text {
-      text-align: left;
-
-      @include respond(phone) {
-        margin-bottom: 2.5rem !important;
-      }
-      @include respond(tab-land) {
-        margin-bottom: 4.8rem;
-      }
-
-      &-title {
-        font-weight: bold;
-        margin-bottom: 1.8rem;
-        font-size: $mid-font-size;
-
-        @include respond(phone) {
-          font-size: 2rem;
+        .teaserboxes,
+        .col,
+        .box-caption {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
         }
-      }
-
-      & p > a {
-        color: $secondary-color;
-      }
-    }
-
-    &__image {
-      width: 90%;
-      margin: 0 auto;
-
-      @include respond(tab-land) {
-        width: 100%;
-        margin: 0;
-      }
-
-      & .thumbnail {
-        border: none;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        transition: all 0.2s ease-out;
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
-        transition: 0.5s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
-          0.5s box-shadow,
-          0.5s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
-
-        @include respond(phone) {
-          border: 1px solid $light-grey;
-          box-shadow: none;
-          margin-bottom: 3.2rem;
+      
+        .teaserboxes {
+          width: 100%;
+          max-width: 180rem;
+          margin: 0 auto;
+          padding: 1rem;
+          flex-direction: row;
         }
-      }
+      
+        .col {
+          width: 25%;
+          flex-basis: 25%;
+          flex-direction: column;
+        }
+      
+        .box {
+          position: relative;
+          width: 100%;
+          background: var(--c2);
+          overflow: hidden;
+          cursor: pointer;
+        }
+      
+        .box>img {
+          display: block;
+          width: 100%;
+          height: auto;
+          opacity: 1;
+          transition: opacity 0.5s;
+        }
+      
+        .box-caption {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          padding: 0.5rem;
+          background: none;
+          text-align: right;
+          color: white;
+          flex-direction: column;
+          opacity: 0;
+          transform: scale(2);
+          transition: all 0.5s;
+        }
+      
+        .box-caption h3 {
+          position: relative;
+          margin-bottom: 1rem;
+        }
+      
+        .box-caption h3:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          bottom: -0.5rem;
+          width: 0;
+          height: 2px;
+          background: #E95D1F;
+          transition: width 0.1s 0.8s;
+        }
+      
+        .touched>.box-caption,
+        .hovered>.box-caption {
+          opacity: 1;
+          transform: scale(1);
+        }
+      
+        .touched>.box-caption h3:after,
+        .hovered>.box-caption h3:after {
+          width: 2rem;
+        }
+      
+        .touched>img,
+        .hovered>img {
+          opacity: 0;
+        }
+      
+        body {
+          background: #353842;
+          font-family: 'Lato', sans-serif;
+          font-size: 100%;
+        }
+      
+        html,
+        body {
+          width: 100%;
+          height: 100%;
+        }
+      
+        /**/
+        @media screen and (max-width: 60.000em) {
+          .col {
+            width: 33.333%;
+            flex-basis: 33.333%;
+            justify-content: flex-end;
+          }
+      
+          .col:last-child {
+            justify-content: flex-start;
+          }
+        }
+      
+        @media screen and (max-width: 40.000em) {
+          .col {
+            width: 50%;
+            flex-basis: 50%;
+          }
+      
+          .col:nth-child(-n+2) {
+            justify-content: flex-end;
+          }
+      
+          .col:nth-child(n+2) {
+            justify-content: flex-start;
+          }
+        }
+      
+        @media screen and (max-width: 30.000em) {
+          .col {
+            width: 100%;
+            flex-basis: 100%;
+            justify-content: center;
+          }
+        }
+      
+        /*
+       FlexFun
+       Hornebom / 2014-02-06
+       HTML and CSS MIT licensed
+       http://hornebom.com/
+      */
+    
     }
-  }
 }
+
