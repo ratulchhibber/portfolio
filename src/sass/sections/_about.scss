@@ -63,9 +63,9 @@
       /* effect-clean*/
       .clean .overlay span:nth-child(1) {
         position: absolute;
-        left: 30%;
-        top: 35%;
-        font-size: 80px;
+        left: 15%;
+        top: 40%;
+        font-size: 60px;
         font-weight: bold;
         font-family: coustard;
         transform: translateX(-50%);
@@ -75,7 +75,8 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        font-size: 17px;
+        font-size: 11px;
+        font-weight: bold;
         transform: translateX(-50%);
       }
 
