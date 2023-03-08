@@ -50,9 +50,6 @@ class StickyNavigation {
     $(".et-hero-tab").on("click", function () {
       self.onTabClick(window.event, $(this));
     });
-    $(".cta-btn cta-btn--hero").on("click", function () {
-      self.onTabClick(window.event, $(this));
-    });
     $(window).on("scroll", () => {
       this.onScroll();
     });
